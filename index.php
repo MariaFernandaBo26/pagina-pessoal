@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <form>
+    <form method="POST">
         <h1>Cadastro</h1>
 
         <label for="nome">Nome:</label>
@@ -28,7 +28,23 @@
 
         <button type="button">Cadastrar</button>
     </form>
+<?php
+    // Verifica se o formulário foi enviado
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    // Recebe o e-mail enviado pelo formulário
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $telefone = $_POST["telefone"];
+
+    // Mostra as informações recebidas recebido
+    echo "Dados recebidos:<br>";
+    echo "Nome: " . $nome . "<br>";
+    echo "E-mail: " . $email . "<br>";
+    echo "Telefone: " . $telefone;
+}    
+?>
+    
 </body>
 </html>
 
