@@ -53,7 +53,19 @@
     $email = $_POST["email"];
     $telefone = $_POST["telefone"];
 
-    // Mostra as informações recebidas recebido
+    // Mostra as informações recebidas
+
+    $sql = "INSERT INTO cadastro (nome, email, telefone)
+            VALUES (:nome, :email, :telefone)";
+
+    $stmt = $pdo->prepare($sql);
+
+    $stmt->execute([
+        ":nome" => $nome,
+        ":email" => $email,
+        ":telefone" => $telefone
+    ]);
+        
     echo "Dados recebidos:<br>";
     echo "Nome: " . $nome . "<br>";
     echo "E-mail: " . $email . "<br>";
