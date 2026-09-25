@@ -70,6 +70,7 @@
     echo "Nome: " . $nome . "<br>";
     echo "E-mail: " . $email . "<br>";
     echo "Telefone: " . $telefone;
+    <br>
     echo "Dados cadastrados com sucesso!";
         
 }    
