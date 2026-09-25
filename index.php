@@ -29,6 +29,22 @@
         <button type="submit">Cadastrar</button>
     </form>
 <?php
+
+    $databaseUrl = getenv("DATABASE_URL");
+    $url = parse_url($databaseUrl);
+
+    $host = $url["host"];
+    $port = $url["port"] ?? 5432;
+    $dbname = ltrim($url["path"], "/");
+    $user = $url["user"];
+    $password = $url["pass"];
+
+    $pdo = new PDO(
+        "pgsql:host=$host;port=$port;dbname=$dbname;sslmode=require",
+        $user,
+        $password
+    );
+
     // Verifica se o formulário foi enviado
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
