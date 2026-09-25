@@ -66,11 +66,11 @@
         ":telefone" => $telefone
     ]);
         
-    echo "Dados recebidos:<br>";
+    echo "Dados cadastrados:<br>";
     echo "Nome: " . $nome . "<br>";
     echo "E-mail: " . $email . "<br>";
-    echo "Telefone: " . $telefone . " <br>";
-    echo "Dados cadastrados com sucesso!";
+    echo "Telefone: " . $telefone;
+    
         
 }    
 ?>
